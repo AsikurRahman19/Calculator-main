@@ -22,12 +22,12 @@ export default function App() {
     },
     resultText: {
       maxHeight: 45,
-      color: '#FF6666',
+      color: '#F8F8FF',
       margin: 15,
       fontSize: 35,
     },
     historyText: {
-      color: darkMode ? '#B5B7BB' : '#7c7c7c',
+      color: darkMode ? '#F8F8FF' : '#F8F8FF',
       fontSize: 20,
       marginRight: 10,
       alignSelf: 'flex-end',
@@ -36,11 +36,11 @@ export default function App() {
       alignSelf: 'flex-start',
       bottom: '5%',
       margin: 15,
-      backgroundColor: darkMode ? '#7b8084' : '#e5e5e5',
+      backgroundColor: darkMode ? '#F8F8FF' : '#F8F8FF',
       alignItems: 'center',
       justifyContent: 'center',
-      width: 50,
-      height: 50,
+      width: 20,
+      height: 20,
       borderRadius: 25,
     },
     buttons: {
@@ -50,7 +50,7 @@ export default function App() {
       flexWrap: 'wrap',
     },
     button: {
-      borderColor: darkMode ? '#3f4d5b' : '#e5e5e5',
+      borderColor: darkMode ? '#F8F8FF' : '#F8F8FF',
       alignItems: 'center',
       justifyContent: 'center',
       minWidth: '24%',
@@ -58,7 +58,7 @@ export default function App() {
       flex: 2,
     },
     textButton: {
-      color: darkMode ? '#b5b7bb' : '#7c7c7c',
+      color: darkMode ? '#F8F8FF' : '#F8F8FF',
       fontSize: 28,
     }
   })
@@ -106,30 +106,30 @@ export default function App() {
       <View style={styles.buttons}>
         {buttons.map((btn) =>
           btn === '=' || btn === '/' || btn === '*' || btn === '-' || btn === '+' ?
-            <TouchableOpacity key={btn} style={[styles.button, { backgroundColor: '#f50206' }]} onPress={() => handleInput(btn)}>
+            <TouchableOpacity key={btn} style={[styles.button, { backgroundColor: '#F8F8FF' }]} onPress={() => handleInput(btn)}>
               <Text style={[styles.textButton, { color: 'white', fontSize: 20 }]}>{btn}</Text>
             </TouchableOpacity>
             : btn === 0 ?
               <TouchableOpacity key={btn} style={[styles.button, {
-                backgroundColor: typeof (btn) === 'number' ?
-                  darkMode ? '#303946' : '#fff' : darkMode === true ? '#414853' : '#ededed', minWidth: '36%'
+                backgroundColor: typeof (btn) === '#F8F8FF' ?
+                  darkMode ? '#F8F8FF' : '#fff' : darkMode === true ? '#F8F8FF' : '#ededed', minWidth: '39%'
               }]} onPress={() => handleInput(btn)}>
                 <Text style={styles.textButton}>{btn}</Text>
               </TouchableOpacity>
               : btn === '.' || btn === 'DEL' ?
-                <TouchableOpacity key={btn} style={[styles.button, { backgroundColor: btn === '.' ? darkMode ? '#303946' : '#fff' : darkMode === true ? '#414853' : '#878aed', minWidth: '37%' }]}
+                <TouchableOpacity key={btn} style={[styles.button, { backgroundColor: btn === '.' ? darkMode ? '#F8F8FF' : '#fff' : darkMode === true ? '#F8F8FF' : '#878aed', minWidth: '37%' }]}
                   onPress={() => handleInput(btn)}
                 >
                   <Text style={styles.textButton}>{btn}</Text>
                 </TouchableOpacity>
                 : btn === 'C' ?
-                  <TouchableOpacity key={btn} style={[styles.button, { backgroundColor: typeof (btn) === 'number' ? darkMode ? '#303946' : '#fff' : darkMode === true ? '#414853' : '#9ad8db', minWidth: '36%' }]}
+                  <TouchableOpacity key={btn} style={[styles.button, { backgroundColor: typeof (btn) === 'number' ? darkMode ? '#F8F8FF' : '#fff' : darkMode === true ? '#F8F8FF' : '#F8F8FF', minWidth: '36%' }]}
                     onPress={() => handleInput(btn)}
                   >
                     <Text style={styles.textButton}>{btn}</Text>
                   </TouchableOpacity>
                   :
-                  <TouchableOpacity key={btn} style={[styles.button, { backgroundColor: typeof (btn) === 'number' ? darkMode ? '#303946' : '#fff' : darkMode === true ? '#414853' : '#ededed' }]}
+                  <TouchableOpacity key={btn} style={[styles.button, { backgroundColor: typeof (btn) === 'number' ? darkMode ? '#F8F8FF' : '#fff' : darkMode === true ? '#F8F8FF' : '#F8F8FF' }]}
                     onPress={() => handleInput(btn)}
                   >
                     <Text style={styles.textButton}>{btn}</Text>
